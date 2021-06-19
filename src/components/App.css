@@ -1,0 +1,50 @@
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  .grid-cointainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+  
+.editor-header {
+  height: 30px;
+  width:900px;
+  content: attr(title);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 18px;
+  color: #fafafa;
+  background-color: black;
+}
+  
+  .iframe {
+    position:fixed;
+    top:0px;
+    left:900px;
+    width: 900px;
+    height: 1000px;
+    bottom:90px;
+  }
+  #UNIQUE_ID_OF_DIV{
+    margin-right:0px;
+    height:120px;
+    width: 500px;
+    margin-right: 0%;
+
+    
+  }
+  .editor{
+    width:500px;
+    height:800px;
+    margin:0;
+    padding: 0;
+  }
