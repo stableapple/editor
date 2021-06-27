@@ -7,6 +7,9 @@ import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import * as ace from "ace-builds"
 import './App.css'
+import HtmlEditor from './HTML';
+import CssEditor from './CSS';
+import JavascriptEditor from './Javascript';
 
 
 class App extends Component {
@@ -109,48 +112,13 @@ class App extends Component {
               href={this.state.fileDownloadUrl}
               ref={e=>this.dofileDownload = e}
               >download it</a>
-            <AceEditor
-               mode="html"
-                theme="solarized_dark"
-                onChange={this.onhtmlChange}
-                showPrintMargin={false}
-                value={html}
-                name="UNIQUE_ID_OF_DIV"
-                editorProps={{ $blockScrolling: true }}
-                style={{height:300,width:900,backgroundColor: "black"}}
-                
-            />
+
+            <HtmlEditor onhtmlChange={this.onhtmlChange} />
  
           <div className="editor-header">CSS</div>
-           <AceEditor
-               mode="css"
-                theme="solarized_dark"
-                onChange={this.oncssChange}
-                showPrintMargin={false}
-                value={css}
-                name="UNIQUE_ID_OF_DIV"
-                editorProps={{ $blockScrolling: true }}
-                setOptions={{
-                  useWorker:true
-                }}
-                style={{height:300,width:900,backgroundColor: "black"}}
-                
-            />
+           <CssEditor oncssChange={this.oncssChange} />
             <div className="editor-header">Javascript</div>
-              <AceEditor
-               mode="javascript"
-                theme="solarized_dark"
-                onChange={this.onjsChange}
-                showPrintMargin={false}
-                value={js}
-                name="UNIQUE_ID_OF_DIV"
-                editorProps={{ $blockScrolling: true }}
-                setOptions={{
-                  useWorker:true
-                }}
-                style={{height:300,width:900,backgroundColor: "black"}}
-                
-            />
+              <JavascriptEditor onjsChange={this.onjsChange} />
             <iframe title="result" class="iframe" ref="iframe" />
           </div>
  
