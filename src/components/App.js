@@ -10,7 +10,13 @@ import './App.css'
 
 
 class App extends Component {
-    state={html:'',css:'',js:'',newValue:'',editor:'',annotations:[]}
+  
+    state={html:'',css:'',js:'',newValue:'',editor:'',fileDownloadUrl:null,annotations:[]}
+    fileNames = {
+    	html: "index.html",
+      styles: "styles.css",
+      text: "states.txt"
+    }    
 
   
   
@@ -32,6 +38,30 @@ class App extends Component {
     componentDidUpdate=()=>{
         this.runCode();
     }
+    download= () => {
+      let output;
+      // Prepare the file
+      
+        
+          // Prepare data:
+          output = '';
+          
+            output += `${this.state.html}\n`
+      
+      
+        
+        // Download it
+        const blob = new Blob([output]);
+        const fileDownloadUrl = URL.createObjectURL(blob);
+        this.setState ({fileDownloadUrl: fileDownloadUrl}, 
+          ()=>{
+            this.dofileDownload.click() 
+            URL.revokeObjectURL(fileDownloadUrl);  // free up storage--no longer needed.
+            this.setState({fileDownloadUrl: ""})
+          })
+
+        }
+    
     runCode=() => {
         const { html, css, js } = this.state;
     
@@ -71,6 +101,14 @@ class App extends Component {
         <div>
               <div className="editor">
               <div className="editor-header">HTML</div>
+              <button onClick={this.download}>
+                Download the file!
+              </button>
+              <a style={{display: "none"}}
+              download="state.txt"
+              href={this.state.fileDownloadUrl}
+              ref={e=>this.dofileDownload = e}
+              >download it</a>
             <AceEditor
                mode="html"
                 theme="solarized_dark"
