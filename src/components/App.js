@@ -13,13 +13,15 @@ import JavascriptEditor from './Javascript';
 
 
 class App extends Component {
-  
-    state={html:'',css:'',js:'',newValue:'',editor:'',fileDownloadUrl:null,annotations:[]}
+
+    defaultfileType="html"
     fileNames = {
-    	html: "index.html",
-      styles: "styles.css",
-      text: "states.txt"
-    }    
+    html: "index.html",
+    css: "styles.css",
+    js: "main.js"
+  }    
+    state={html:'',css:'',js:'',newValue:'',editor:'',filetype:this.defaultfileType,fileDownloadUrl:null,annotations:[]}
+    
 
   
   
@@ -41,16 +43,29 @@ class App extends Component {
     componentDidUpdate=()=>{
         this.runCode();
     }
-    download= () => {
+    download= (name) => {
       let output;
+      this.setState({filetype:name})
       // Prepare the file
       
         
           // Prepare data:
+          if(name==="html"){
           output = '';
           
             output += `${this.state.html}\n`
-      
+          }
+          if(name==="css"){
+            output = '';
+            
+              output += `${this.state.css}\n`
+            }
+            if(name==="js"){
+              output = '';
+              
+                output += `${this.state.js}\n`
+              }
+        
       
         
         // Download it
@@ -99,16 +114,15 @@ class App extends Component {
     
     render() {
       ace.config.set('basePath', "https://unpkg.com/ace-builds@1.4.12/src-noconflict")
-        const { html, js, css } = this.state;
         return(
         <div>
               <div className="editor">
               <div className="editor-header">HTML</div>
-              <button onClick={this.download}>
+              <button onClick={e=>this.download("html")}>
                 Download the file!
               </button>
               <a style={{display: "none"}}
-              download="state.txt"
+              download={this.fileNames[this.state.filetype]}
               href={this.state.fileDownloadUrl}
               ref={e=>this.dofileDownload = e}
               >download it</a>
@@ -116,8 +130,15 @@ class App extends Component {
             <HtmlEditor onhtmlChange={this.onhtmlChange} />
  
           <div className="editor-header">CSS</div>
+          <button onClick={e=>this.download("css")}>
+                Download the file!
+              </button>
+              
            <CssEditor oncssChange={this.oncssChange} />
             <div className="editor-header">Javascript</div>
+            <button onClick={e=>this.download("js")}>
+                Download the file!
+              </button>
               <JavascriptEditor onjsChange={this.onjsChange} />
             <iframe title="result" class="iframe" ref="iframe" />
           </div>
