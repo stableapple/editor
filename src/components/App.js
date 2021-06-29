@@ -117,10 +117,11 @@ class App extends Component {
         return(
         <div>
               <div className="editor">
-              <div className="editor-header">HTML</div>
-              <button onClick={e=>this.download("html")}>
-                Download the file!
+              <div className="editor-header">HTML
+              <button onClick={e=>this.download("html")} style={{marginLeft:730}}>
+                Download<i class="fa fa-download"></i>
               </button>
+              </div>
               <a style={{display: "none"}}
               download={this.fileNames[this.state.filetype]}
               href={this.state.fileDownloadUrl}
@@ -129,16 +130,18 @@ class App extends Component {
 
             <HtmlEditor onhtmlChange={this.onhtmlChange} />
  
-          <div className="editor-header">CSS</div>
-          <button onClick={e=>this.download("css")}>
-                Download the file!
+          <div className="editor-header">CSS
+          <button onClick={e=>this.download("css")} style={{marginLeft:750}}>
+                Download<i class="fa fa-download"></i>
               </button>
+              </div>
               
            <CssEditor oncssChange={this.oncssChange} />
-            <div className="editor-header">Javascript</div>
-            <button onClick={e=>this.download("js")}>
-                Download the file!
+            <div className="editor-header">Javascript
+            <button onClick={e=>this.download("js")} style={{marginLeft:710}}>
+                Download <i class="fa fa-download"></i>
               </button>
+              </div>
               <JavascriptEditor onjsChange={this.onjsChange} />
             <iframe title="result" class="iframe" ref="iframe" />
           </div>
