@@ -25,7 +25,7 @@ it('shows button and textarea', () => {
     expect(wrapped.find('button').length).toEqual(3);
     wrapped.unmount();
 })
-it('it shows iframe', () => {
+it('shows iframe', () => {
     
     const wrapped = mount(<App />);
     expect(wrapped.find('iframe').length).toEqual(1)
