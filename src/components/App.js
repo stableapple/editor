@@ -84,7 +84,7 @@ class App extends Component {
         const { html, css, js } = this.state;
     
         const iframe = this.refs.iframe;
-        const document = iframe.contentDocument;
+        const document = iframe.contentDocument.body;
         const documentContents = `
           <!DOCTYPE html>
           <html lang="en">
@@ -144,7 +144,7 @@ class App extends Component {
               </button>
               </div>
               <JavascriptEditor onjsChange={this.onjsChange} />
-            <iframe title="result" class="iframe" ref="iframe" />
+            <iframe title="result" className="iframe" ref="iframe" />
           </div>
  
      

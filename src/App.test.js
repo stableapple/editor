@@ -22,5 +22,12 @@ it('shows a javascript editor',()=>{
 })
 it('shows button and textarea', () => {
     const wrapped=mount(<App />);
-    expect(wrapped.find("button").length).toEqual(3);
+    expect(wrapped.find('button').length).toEqual(3);
+    wrapped.unmount();
 })
+it('it shows iframe', () => {
+    
+    const wrapped = mount(<App />);
+    expect(wrapped.find('iframe').length).toEqual(1)
+    wrapped.unmount();  
+  });
