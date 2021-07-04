@@ -8,13 +8,11 @@ Editor is a responsive HTML/CSS/JS code editor that renders what you type in rea
 2. cd into ```editor``` and run ```npm install```
 ```
   npm install
-
 ```
 3. 3. Run `npm start` to run this on your local server. This opens port `3000`.
 
 ```
   npm start
-
 ```
 ## Package and Interfaces
 

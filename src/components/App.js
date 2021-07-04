@@ -98,8 +98,9 @@ class App extends Component {
             </style>
           </head>
           <body>
-            ${html}
-    
+            <div>
+              ${html}
+            </div>
             <script type="text/javascript">
               ${js}
             </script>
@@ -119,7 +120,7 @@ class App extends Component {
               <div className="editor">
               <div className="editor-header">HTML
               <button onClick={e=>this.download("html")} style={{marginLeft:730}}>
-                Download<i class="fa fa-download"></i>
+                Download<i className="fa fa-download"></i>
               </button>
               </div>
               <a style={{display: "none"}}
@@ -132,14 +133,14 @@ class App extends Component {
  
           <div className="editor-header">CSS
           <button onClick={e=>this.download("css")} style={{marginLeft:750}}>
-                Download<i class="fa fa-download"></i>
+                Download<i className="fa fa-download"></i>
               </button>
               </div>
               
            <CssEditor oncssChange={this.oncssChange} />
             <div className="editor-header">Javascript
             <button onClick={e=>this.download("js")} style={{marginLeft:710}}>
-                Download <i class="fa fa-download"></i>
+                Download <i className="fa fa-download"></i>
               </button>
               </div>
               <JavascriptEditor onjsChange={this.onjsChange} />
