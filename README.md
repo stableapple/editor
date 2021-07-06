@@ -2,6 +2,7 @@
 
 Editor is a responsive HTML/CSS/JS code editor that renders what you type in real-time. 
 
+
 ## Installation
 
 1. Clone this repo
@@ -14,6 +15,14 @@ Editor is a responsive HTML/CSS/JS code editor that renders what you type in rea
 ```
   npm start
 ```
+## Run tests
+
+- The test setup is done using Jest and Enzyme. Read more about it:
+ [Enzyme Docs](https://enzymejs.github.io/enzyme/)
+```
+npm run test
+```
+
 ## Package and Interfaces
 
 - [AceEditor](https://www.npmjs.com/package/react-ace)
