@@ -1,24 +1,29 @@
 # Editor
 
-Editor is a responsive HTML/CSS/JS code editor that renders what you type in real-time. 
+Editor is a responsive HTML/CSS/JS code editor that renders the code you type in real-time. 
+
+<img src="https://github.com/stableapple/editor/blob/main/screenshot/new.png" >
 
 
 ## Installation
 
-1. Clone this repo
+1. Clone the repository
 2. cd into ```editor``` and run ```npm install```
+
 ```
   npm install
 ```
-3. 3. Run `npm start` to run this on your local server. This opens port `3000`.
+3. Run `npm start` to run this on your local server. This opens port `3000`.
 
 ```
   npm start
 ```
+
 ## Run tests
 
 - The test setup is done using Jest and Enzyme. Read more about it:
  [Enzyme Docs](https://enzymejs.github.io/enzyme/)
+
 ```
 npm run test
 ```
@@ -33,12 +38,11 @@ npm run test
 
 ## Features
 
-- Auto-Save (Local Storage)
-- Resizable Code/Preview Pane
-- Preview Pane Width Indicator
+- Live syntax checker which checks and displays syntax errors.
+- Download the code as .html,.css and  .js file
+- Auto completion enabled as default
 - Syntax Highlighting
-- Download as .html,.css, .js file
-
+- Resizable Code/Preview Pane
 
 
 ## Browser Support
