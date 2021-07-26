@@ -5,6 +5,8 @@ Editor is a responsive HTML/CSS/JS code editor that renders the code you type in
 <img src="https://github.com/stableapple/editor/blob/main/screenshot/new.png" >
 
 
+Try it here: [Demo](https://uujzf.csb.app/)
+
 ## Installation
 
 1. Clone the repository
